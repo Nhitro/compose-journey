@@ -1,6 +1,5 @@
 package com.garnier.julien.compose.journey.ui.custom
 
-import androidx.compose.animation.core.AnimationSpec
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
@@ -9,11 +8,11 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.material3.Divider
-import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Surface
 import androidx.compose.material3.TabRowDefaults
 import androidx.compose.runtime.Composable
@@ -40,8 +39,9 @@ fun IconTabRow(
     indicator: @Composable (tabPositions: List<TabPosition>) -> Unit = @Composable { tabPositions ->
         if (selectedTabIndex < tabPositions.size) {
             TabRowDefaults.Indicator(
-                modifier = Modifier.tabIndicatorOffset(tabPositions[selectedTabIndex]),
+                modifier = Modifier.tabIndicatorOffset(tabPositions[selectedTabIndex]).padding(horizontal = 4.dp),
                 color = indicatorColor,
+                height = 2.dp,
             )
         }
     },
@@ -123,7 +123,7 @@ fun IconTabRow(
  */
 @Immutable
 class TabPosition internal constructor(val left: Dp, val width: Dp) {
-    val right: Dp get() = left + width
+    private val right: Dp get() = left + width
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -201,27 +201,11 @@ object TabRowDefaults {
         fillMaxWidth()
             .wrapContentSize(Alignment.BottomStart)
             .offset(x = indicatorOffset)
-            .width(currentTabWidth as Dp)
+            .width(currentTabWidth)
     }
 }
-
 private enum class TabSlots {
     Tabs,
     Divider,
     Indicator
 }
-
-private val ScrollableTabRowMinimumTabWidth = 90.dp
-
-/**
- * The default padding from the starting edge before a tab in a [ScrollableTabRow].
- */
-private val ScrollableTabRowPadding = 52.dp
-
-/**
- * [AnimationSpec] used when scrolling to a tab that is not fully visible.
- */
-private val ScrollableTabRowScrollSpec: AnimationSpec<Float> = tween(
-    durationMillis = 250,
-    easing = FastOutSlowInEasing
-)
