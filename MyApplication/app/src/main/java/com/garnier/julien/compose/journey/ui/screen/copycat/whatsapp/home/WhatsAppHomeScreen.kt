@@ -23,19 +23,14 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.garnier.julien.compose.journey.R
 import com.garnier.julien.compose.journey.ui.custom.IconTabRow
 import com.garnier.julien.compose.journey.ui.theme.ComposeJourneyTheme
 import com.garnier.julien.compose.journey.ui.theme.WhatsAppColor
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
@@ -113,14 +108,6 @@ fun WhatsAppHomeScreen() {
                 modifier = Modifier.fillMaxSize()
             ) {}
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ComposeJourneyTheme {
-        WhatsAppHomeScreen()
     }
 }
 
