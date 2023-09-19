@@ -77,7 +77,6 @@ fun WhatsAppHomeScreen() {
                 containerColor = WhatsAppColor.BackgroundPrimary,
                 iconTabWidthInDp = 100.dp,
                 indicatorColor = WhatsAppColor.ContentPrimary,
-                divider = {}
             ) {
                 WhatsAppIconTab(
                     pagerState = pagerState,
