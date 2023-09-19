@@ -121,53 +121,10 @@ fun WhatsAppToolbarIcon(@DrawableRes id: Int) {
     )
 }
 
-@OptIn(ExperimentalFoundationApi::class)
+@Preview(showBackground = true)
 @Composable
-private fun WhatsAppTextTab(
-    pagerState: PagerState,
-    text: String,
-    pageIndex: Int,
-    scope: CoroutineScope,
-) {
-    val isTabSelected = pagerState.currentPage == pageIndex
-
-    Tab(
-        selected = isTabSelected,
-        onClick = { scope.launch { pagerState.animateScrollToPage(pageIndex) } },
-        modifier = Modifier.height(42.dp)
-    ) {
-        Text(
-            modifier = Modifier.align(Alignment.CenterHorizontally),
-            textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.titleSmall,
-            text = text,
-            color =
-            if (isTabSelected) WhatsAppColor.ContentPrimary
-            else WhatsAppColor.ContentPrimaryDisabled
-        )
-    }
-}
-
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
-fun WhatsAppIconTab(
-    pagerState: PagerState,
-    @DrawableRes icon: Int,
-    tabIndex: Int,
-    scope: CoroutineScope
-) {
-    val isTabSelected = pagerState.currentPage == tabIndex
-
-    Tab(
-        modifier = Modifier.size(8.dp),
-        selected = isTabSelected,
-        onClick = { scope.launch { pagerState.animateScrollToPage(0) } }
-    ) {
-        Icon(
-            painter = painterResource(id = icon),
-            contentDescription = null,
-            modifier = Modifier.padding(horizontal = 8.dp),
-            tint = if (isTabSelected) WhatsAppColor.ContentPrimary else WhatsAppColor.ContentPrimaryDisabled
-        )
+fun WhatsAppHomeScreenPreview() {
+    ComposeJourneyTheme {
+        WhatsAppHomeScreen()
     }
 }
