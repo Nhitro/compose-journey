@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.garnier.julien.compose.journey.R
 import com.garnier.julien.compose.journey.ui.custom.IconTabRow
+import com.garnier.julien.compose.journey.ui.screen.copycat.whatsapp.home.page.WhatsAppCommunityPage
 import com.garnier.julien.compose.journey.ui.theme.ComposeJourneyTheme
 import com.garnier.julien.compose.journey.ui.theme.WhatsAppColor
 
@@ -101,7 +102,11 @@ fun WhatsAppHomeScreen() {
             HorizontalPager(
                 state = pagerState,
                 modifier = Modifier.fillMaxSize()
-            ) {}
+            ) { page ->
+                when (page) {
+                    0 -> WhatsAppCommunityPage()
+                }
+            }
         }
     }
 }
