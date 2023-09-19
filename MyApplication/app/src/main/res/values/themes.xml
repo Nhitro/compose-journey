@@ -1,3 +1,4 @@
 <resources>
     <!-- Base application theme. -->
+    <style name="ComposeJourneyTheme" parent="@style/Theme.Material3.DayNight.NoActionBar" />
 </resources>
