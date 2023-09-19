@@ -16,6 +16,13 @@ private val helveticaFontFamily = FontFamily(
 )
 
 val WhatsAppTypography = Typography(
+
+    headlineLarge = TextStyle(
+        color = WhatsAppColor.ContentPrimary,
+        fontSize = 20.sp,
+        fontFamily = helveticaFontFamily,
+        fontWeight = FontWeight.Bold,
+    ),
     titleMedium = TextStyle(
         color = WhatsAppColor.ContentPrimary,
         fontSize = 22.sp,
@@ -27,5 +34,11 @@ val WhatsAppTypography = Typography(
         fontSize = 15.sp,
         fontFamily = helveticaFontFamily,
         fontWeight = FontWeight.Normal,
-    )
+    ),
+    displaySmall = TextStyle(
+        color = WhatsAppColor.ContentPrimary,
+        fontSize = 14.sp,
+        fontFamily = helveticaFontFamily,
+        fontWeight = FontWeight.Normal,
+    ),
 )

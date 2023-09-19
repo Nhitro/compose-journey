@@ -13,5 +13,6 @@ val Pink40 = Color(0xFF7D5260)
 object WhatsAppColor {
     val ContentPrimary = Color(0xFFFFFFFF)
     val ContentPrimaryDisabled = Color(0xFF56A396)
+    val ContentSecondary = Color(0xFF008069)
     val BackgroundPrimary = Color(0xFF008069)
 }
